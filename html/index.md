@@ -6,13 +6,14 @@ HTML tells a web browser how to display a web page.
 
 CSS makes the web page look nice.
 
+
 ## What your will build
 
 HTML (Hypertext Markup Language) is the set of markup symbols or codes inserted in a file intended for display on a World Wide Web browser page. The markup tells the Web browser how to display a Web page's words and images for the user.
 
 We will use html "tags" and css styles to create a "profile" or "vanity" web page that you can use to showcase yourself, your favorite cartoon character or superhero.
 
-![Profile Web Page](/assets/img/profile-web-page-mr-handsome.png)
+![Profile Web Page](/assets/img/profile-web-page-mr-handsome.png) 
 
 ## html tags (elements)
 

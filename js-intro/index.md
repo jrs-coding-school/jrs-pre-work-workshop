@@ -2,30 +2,33 @@
 
 # JavaScript Basics
 
+> Software is eating industries. JavaScript is eating software.
+
 JavaScript is a programming language commonly used in web development. It was originally developed by Netscape as a means to add dynamic and interactive elements to websites.  Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production; the majority of websites employ it, and all modern Web browsers support it without the need for plug-ins.
 
-JavaScript is also used in environments that are not Web-based.  
-
-JavaScript runs everywhere from a web browser to a web server to a database to a drone to a [refrigerator](https://github.com/GEMakers/gea-plugin-refrigerator).  
-
-> Software is eating industries. JavaScript is eating software.
+JavaScript is also used in environments that are not Web-based.  JavaScript runs everywhere from a web browser to a web server to a database to a drone to a [refrigerator](https://github.com/GEMakers/gea-plugin-refrigerator).  
 
 In this session we will explore some JavaScript fundamentals including:
 
-- Values - Every value has a type that determines its role.
-- Operators - Combine and transform values with operators.
-- Expressions - A fragment of code that produces a value.
-- Variables - A variable is used within a computer program to remember something.
-- Environment - A program starts up in its environment which _is not empty_. It contains variables to interact with the surrounding system.  
-- Functions -
-- Control Flow - Executing statements in straight-line order isn’t the only option we have. We can control different routes for the code to flow based on a Boolean (true/false) value.
-- Arrays - JavaScript provides a data type specifically for storing sequences of values.
-
-The goal of this session is to provide new boot camp students with a common set of programming tools.
+- **Values** - Every value has a type that determines its role.
+- **Operators** - Combine and transform values with operators.
+- **Expressions** - A fragment of code that produces a value.
+- **Variables** - A variable is used within a computer program to remember something.
+- **Environment** - A program starts up in its environment which _is not empty_. It contains variables to interact with the surrounding system.  
+- **Functions**
+- **Control Flow** - Control different routes for the code to flow based on a Boolean (true/false) value.
+- **Arrays** - JavaScript provides a data type specifically for storing sequences of values.
 
 ## Values
 
-Values - Every value has a type that determines its role. There are six basic types of values in JavaScript: numbers, strings, Booleans, objects, functions, and undefined values.
+Every value has a type that determines its role. There are six basic types of values in JavaScript:
+
+- number
+- strings
+- Booleans (True or False)
+- objects
+- functions
+- undefined values
 
 ## Operators
 
@@ -40,13 +43,25 @@ Combine and transform values with operators:
 
 ### DEMO Adding
 
-Create a function named `add()` .  The function should accept two parameters named `add1` and `add2`.  The function should add the numbers and display the result
+- Create a function named `add()`.  The function should accept two parameters named `add1` and `add2`.  The function should add the numbers and display the result using `alert()`.
+
+- Test the function in the console window.
+
+- Use an `onClick()` event handler to call the `add()` function from the pulse button.
+
+## Events
+
+The Web platform provides several ways to get notified of events on a web page.  The platform provides a set of specific _on-event_ handlers.  The on-event handlers are a group of properties offered by HTML elements , such as links, buttons, images, forms, etc. to help manage how that element reacts to events like being clicked, detecting pressed keys, getting focus, etc.
+
+For example, in the previous demo, we specified an **onClick** event handler for the `<a>` element.
 
 ### DEMO Multiply
 
 Create a function named `mult()` .  The function should accept two parameters, multiply and display the result.
 
 ### Student Exercises
+
+> FORK THE PEN:  http://codepen.io/tripott/pen/RKaqPv.
 
 - Instructor "slacks" the url to the **JRS Pre-workshop: JS demos** pen
 - Students fork the pen  http://codepen.io/tripott/pen/RKaqPv.  
