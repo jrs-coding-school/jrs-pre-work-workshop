@@ -6,14 +6,13 @@ HTML tells a web browser how to display a web page.
 
 CSS makes the web page look nice.
 
-
 ## What your will build
 
 HTML (Hypertext Markup Language) is the set of markup symbols or codes inserted in a file intended for display on a World Wide Web browser page. The markup tells the Web browser how to display a Web page's words and images for the user.
 
 We will use html "tags" and css styles to create a "profile" or "vanity" web page that you can use to showcase yourself, your favorite cartoon character or superhero.
 
-![Profile Web Page](/assets/img/profile-web-page-mr-handsome.png) 
+![Profile Web Page](/assets/img/profile-web-page-mr-handsome.png)
 
 ## html tags (elements)
 
@@ -55,13 +54,11 @@ Tachyons uses a modular scale for spacing and sizes based on the powers of two. 
 
 Tachyons features a spacing scale based on powers of two.
 
-
 > "A modular scale, like a musical scale, is a prearranged set of harmonious proportions."
 
-Getting started with Tachyons is as simple as adding a link in your webpage to a .css file located on content delivery network (cdn), like unpkg.com.  unpkg is a fast, global content delivery network. Use it to quickly and easily load files using a simple URL.
+Getting started with Tachyons is as simple as adding a link in your webpage to a .css file located on content delivery network (cdn), like unpkg.com. unpkg is a fast, global content delivery network. Use it to quickly and easily load files using a simple URL.  
 
 ```
-
 <!DOCTYPE html>
 <html lang="en">
   <title> </title>
@@ -71,7 +68,6 @@ Getting started with Tachyons is as simple as adding a link in your webpage to a
 
   </body>
 </html>
-
 ```
 
 

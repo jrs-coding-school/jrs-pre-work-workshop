@@ -1,6 +1,6 @@
-[Home](/)
+[Home](/)   [Arrays](/js-array)   [Objects](/js-objects)
 
-# JavaScript Basics
+# JavaScript
 
 > Software is eating industries. JavaScript is eating software.
 
@@ -29,6 +29,18 @@ Every value has a type that determines its role. There are six basic types of va
 - objects
 - functions
 - undefined values
+
+### strings
+
+A `String` object comes with built-in properties.  
+
+- Every string has a `toUpperCase` property.
+- Properties that contain functions are generally called methods of the value they belong to. As in, “toUpperCase is a method of a string”.
+
+```
+var myString = "Cat"
+myString.toUpperCase()  //returns CAT
+```
 
 ## Operators
 
@@ -361,74 +373,4 @@ console.log(10 % 3 === 0)  // returns false.  10 is not divisible by 3.
 - Modify your program to print "FizzBuzz", for numbers that are divisible by both 3 and 5
 - Continue to print "Fizz" or "Buzz" for numbers divisible by only one of those
 
-## Data Structures
-
-### Arrays
-
-- Numbers, Booleans, and strings are the bricks that data structures are built from. But you can’t make much of a house out of a single brick. Objects allow us to group values—including other objects—together and thus build more complex structures.
-- JavaScript provides a data type specifically for storing sequences of values. It is called an _array_ and is written as a list of values between square brackets, separated by commas.
-
-```
-var imANewButEmptyArray = []
-var listOfNumbers = [2, 3, 5, 7, 11];
-```
-
-- The notation for getting at the elements inside an array also uses square brackets. This will look up the element that corresponds to the index given by the expression in the brackets.
-- The first index of an array is zero, not one. So the first element can be read with listOfNumbers[0].  This is called "zero-based counting".
-
-```
-var listOfNumbers = [2, 3, 5, 7, 11];
-console.log(listOfNumbers[0]);     // returns 2
-console.log(listOfNumbers[1]);     // returns 3
-console.log(listOfNumbers[1 - 1])  // returns 2
-console.log(listOfNumbers[3])      // returns 7
-console.log(listOfNumbers[5])      // returns undefined
-```
-
-### Array Properties and Methods
-
-- Almost all JavaScript values have properties.
-- To get the length of a string we could use the `.length` property of the `string` object:
-
-```
-var myString = "Cat"
-myString.length             // returns 3
-
-var listOfNumbers = [2, 3, 5, 7, 11]
-listOfNumbers.length        // returns 5
-```
-
-- Every string has a `toUpperCase` property.
-- Properties that contain functions are generally called methods of the value they belong to. As in, “toUpperCase is a method of a string”.
-
-```
-var myString = "Cat"
-myString.toUpperCase()  //returns
-```
-
-### Array Methods
-
-- The `push()` method can be used to add values to the end of an array.
-- The `pop()` method does the opposite: it removes the value at the end of the array and returns it.
-
-Demo:  Use the console to play with an array.  Push, pop, length and index and join.  For example:  
-
-```
-// Here's an empty array named "theSentence"
-var theSentence = []
-
-// Let's add a word to the array
-theSentence.push("The")
-console.log(theSentence)
-
-theSentence.push("cow", "jumped", "over", "the", "moon.")
-
-//An array of strings can be flattened to a single string with the join method.
-theSentence.push("The", "dog", "chased", "the", "cat.")
-theSentence.join(" ")
-```
-
-> DEMO:  Fill an array with the fizz and the buzz.
-
-
-[Home](/)
+[Home](/)  
