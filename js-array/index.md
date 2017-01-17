@@ -6,13 +6,57 @@
 var listOfNumbers = [2, 3, 5, 7, 11];
 ```
 
-- Numbers, Booleans, and strings are the bricks that data structures are built from. But you can’t make much of a house out of a single brick. Objects allow us to group values—including other objects—together and thus build more complex structures.
-- JavaScript provides a data type specifically for storing sequences of values. It is called an _array_ and is written as a list of values between square brackets, separated by commas.
+- Numbers, Booleans, and strings form the basis of larger, more complex data structures.  
 
-```
-var imANewButEmptyArray = []
-var listOfNumbers = [2, 3, 5, 7, 11];
-```
+## Arrays can contain objects
+
+Arrays can contain objects. What is an object?
+
+- "An object is an unordered set of name/value pairs. An object begins with `{` (left brace) and ends with `}` (right brace). Each name is followed by `:` (colon) and the name/value pairs are separated by `,` (comma).  -credit:  http://www.json.org/
+
+- Here is an object in JavaScript named `author`.  It is formed using JSON.  JSON (JavaScript Object Notation) is a lightweight data-interchange format.
+
+- A value can be a string in double quotes, or a number, or true or false or null.
+
+  ```
+  var author = {
+    firstName: "William",
+    lastName: "Buckley",
+    birthDate: "1925-11-27",
+    gender: "Male",
+    deceased: true
+  }
+  ```
+
+- A value within an object can be another object, such as `wind`.
+
+  ```
+  var weather = {
+  date: "2017-01-26T15:00:01Z",
+  temp: 55,
+  precip: .11,
+  wind: {
+    windSpeed: 5,
+    windDirection: "WNW",
+    gusts: 20
+  }
+  ```
+
+- Values can be nested. A value within an object can be an array.
+
+  ```
+  var player = {
+    name: "Michael Jordan",
+    mvpSeasons: ["1987-88","1990-91","1991-92","1995-96","1997-98"],
+  }
+  ```
+
+- A value within an object can be an array which contains objects.
+
+YouTube JSON Data Example:  
+
+<a href="http://codepen.io/tripott/pen/dNOZpV" target= "_blank">Code Pen</a>
+
 
 - The notation for getting at the elements inside an array also uses square brackets. This will look up the element that corresponds to the index given by the expression in the brackets.
 - The first index of an array is zero, not one. So the first element can be read with listOfNumbers[0].  This is called "zero-based counting".
@@ -78,9 +122,9 @@ lastName.length         // -> returns a value of 8
 lastName[propertyName]  // -> returns a value of 8
 ```
 
-### Array Methods
+### Array Methods `push`, `pop`, `join`
 
-- The `push` method can be used to add values to the end of an array.
+- The `push` method can be used to add values to the _end_ of an array.
 - The `pop` method does the opposite: it removes the value at the end of the array and returns it.
 - The `join` method flattens all the array values into a string.
 
@@ -99,8 +143,25 @@ theSentence.push("cow", "jumped", "over", "the", "moon.")
 theSentence.push("The", "dog", "chased", "the", "cat.")
 theSentence.join(" ")
 ```
+### Array Methods `unshift` and `shift`
+- The method for _adding_ to the start of an array is `unshift`.
 
-> DEMO:  Fill an array with the fizz and the buzz.
+```
+// Here's an empty array named "theSentence"
+var theSentence = []
+theSentence.push("the", "dish", "ran", "away", "with", "the", "spoon.")
+theSentence.unshift("The", "cow", "jumped", "over", "the", "moon", "and")
+theSentence.join(" ")  // => "The cow jumped over the moon and the dish ran away with the spoon."
+```
+
+- The method for _removing_ from the start of an array is `shift`
+
+```
+theSentence.shift()  // => "The"
+theSentence.shift()  // => "cow"
+theSentence.shift()  // => "jumped"
+theSentence.join(" ") // => "over the moon and the dish ran away with the spoon."
+```
 
 
 [Home](/)

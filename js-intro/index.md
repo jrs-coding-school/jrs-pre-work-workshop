@@ -285,8 +285,6 @@ For this demo, we will use functions that exist within the browser environment:
   - User decides not to square the number.
 
 
-
-
 ### for loops
 
 - All the statements that are related to the “state” of the loop are grouped together.

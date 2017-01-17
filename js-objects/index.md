@@ -186,7 +186,6 @@ console.log(weatherObservation.events[2])   // => Object {
 console.log(weatherObservation.events[1].time) // => "09:00:01Z"
 ```
 
-
 ## DEMO: Using objects and arrays, let's create a weather log of hourly weather readings.
 
 - Create an object containing the following weather observation data.  
@@ -207,9 +206,9 @@ console.log(weatherObservation.events[1].time) // => "09:00:01Z"
 - Display the `wind` object from an item in the array.
 - Display the `gusts` property from the `wind` object from an item in the array.
 
-## Student Exercise
+## EXERCISE: Create a simple hourly weather observation
 
-- Using codepen, create a simple hourly weather observation for 10 AM EST for January 26, 2017 and set it to a variable named `weather`.:
+- Using a new codepen, create a simple hourly weather observation for 10 AM EST for January 26, 2017 and set it to a variable named `weather`.:
 
   ```
   var weather = {
