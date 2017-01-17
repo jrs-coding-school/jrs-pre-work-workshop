@@ -2,6 +2,191 @@
 
 # Objects
 
+- You can create an object using curly brace notation.  
+- Inside the curly braces, include properties separated by commas.
+- To create a property provide:
+  - name
+  - colon
+  - value.
+- Note the `events` property. An array is a value so we can place an array inside an object.
+
+```
+var weatherObservation = {
+  dateTime: "2017-01-26T16:00:01Z",
+  humidityPct: 80,
+  forecast: "Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.",
+  events: ["Fog", "Sun", "Partly Cloudy", "Thunderstorms", "Strong Wind Gusts"],
+  "did it rain": true
+}
+```
+
+- Read property values using dot notation to access property values.
+
+```
+var weatherObservation = {
+  dateTime: "2017-01-26T16:00:01Z",
+  humidityPct: 80,
+  forecast: "Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.",
+  events: ["Fog", "Sun", "Partly Cloudy", "Thunderstorms", "Strong Wind Gusts"],
+  "did it rain": true
+}
+
+console.log(weatherObservation.humidityPct)   // => 80
+```
+
+- Reading a property that doesn’t exist produces an `undefined` value.
+
+```
+var weatherObservation = {
+  dateTime: "2017-01-26T16:00:01Z",
+  humidityPct: 80,
+  forecast: "Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.",
+  events: ["Fog", "Sun", "Partly Cloudy", "Thunderstorms", "Strong Wind Gusts"],
+  "did it rain": true
+}
+console.log(weatherObservation.temp)          // => undefined
+
+```
+
+- Again, read property values using dot notation to access property values.  Both strings and arrays have a `length` property. The `events` property has 5 items within the array.
+
+```
+var weatherObservation = {
+  dateTime: "2017-01-26T16:00:01Z",
+  humidityPct: 80,
+  forecast: "Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.",
+  events: ["Fog", "Sun", "Partly Cloudy", "Thunderstorms", "Strong Wind Gusts"],
+  "did it rain": true
+}
+
+console.log(weatherObservation.events.length) // => 5
+
+```
+
+- We can use the built in JSON object to 'stringify' an object. This creates a string out of the object.
+
+```
+var weatherObservation = {
+  dateTime: "2017-01-26T16:00:01Z",
+  humidityPct: 80,
+  forecast: "Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.",
+  events: ["Fog", "Sun", "Partly Cloudy", "Thunderstorms", "Strong Wind Gusts"],
+  "did it rain": true
+}
+
+console.log(JSON.stringify(weatherObservation))  // =>
+
+ {"dateTime":"2017-01-26T16:00:01Z","humidityPct":80,"forecast":"Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.","events":["Fog","Sun","Partly Cloudy","Thunderstorms","Strong Wind Gusts"]}
+```
+
+- Properties whose names are not valid variable names or valid numbers have to be quoted.
+
+```
+var profile = {
+  firstName: "Steve",
+  lastName: "Martin",
+  "is wild and crazy": true
+}
+```
+- Assign a value to a property expression with the `=` operator. This will replace or create a new property on the object.
+
+```
+var profile = {
+  firstName: "Steve",
+  lastName: "Martin",
+  "is wild and crazy": true
+}
+
+profile.firstName = "Steven"
+profile.entertainerType = "Comedian"
+
+console.log(profile)  // => Object {firstName: "Steven", lastName: "Martin", is wild and crazy: true, entertainerType: "Comedian"}
+
+JSON.stringify(profile)  // => "{"firstName":"Steven","lastName":"Martin","is wild and crazy":true,"entertainerType":"Comedian"}"
+```
+
+- A unary operation is an operation with only one operand.
+- The `delete` operator is a unary operator that removes a property from an object.
+- If the `delete` operator succeeds, it sets the property or element to `undefined`. The `delete` operator returns `true` if the operation is possible; it returns `false` if the operation is not possible.
+
+```
+var profile = {
+  firstName: "Steve",
+  lastName: "Martin",
+  "is wild and crazy": true
+}
+
+delete profile.lastName             // => true
+delete profile["is wild and crazy"] // => true
+
+console.log(profile)  // => Object {firstName: "Steve"}
+```
+
+- The binary `in` operator returns a `Boolean` value that indicates whether that object has that property.
+
+```
+var profile = {
+  firstName: "Steve",
+  lastName: "Martin",
+  "is wild and crazy": true
+}
+
+delete profile.lastName            
+console.log(profile.lastName)         // => undefined
+console.log("lastName" in profile);   // => false
+```
+
+- Objects can contain objects. The `wind` property value is an object that contains its own name value pairs: `windSpeed`, `windDirection`, and `gusts`.
+
+```
+var weatherObservation = {
+  date: "2017-01-26T15:00:01Z",
+  temp: 55,
+  precip: .11,
+  wind: {
+    windSpeed: 5,
+    windDirection: "WNW",
+    gusts: 20
+  }
+}
+```
+
+- Object can contain arrays.  An array can contain objects.  The `events` property contains an array which contains three objects:
+
+```
+var weatherObservation = {
+  date: "2017-01-26",
+  humidityPct: 80,
+  forecast: "Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.",
+  events: [{
+    name: "Fog",
+    time: "08:00:01Z",
+    temp: 55,
+    dewpoint: 56
+  }, {
+    name: "Light Fog",
+    time: "09:00:01Z",
+    temp: 56,
+    dewpoint: 58
+  }, {
+    name: "Clear",
+    time: "13:00:01Z",
+    temp: 65,
+    dewpoint: 58
+  }]
+}
+
+console.log(weatherObservation.events[2])   // => Object {
+                                                    dewpoint: 58,
+                                                    name: "Clear",
+                                                    temp: 65,
+                                                    time: "13:00:01Z"
+                                                  }
+
+console.log(weatherObservation.events[1].time) // => "09:00:01Z"
+```
+
+
 ## DEMO: Using objects and arrays, let's create a weather log of hourly weather readings.
 
 - Create an object containing the following weather observation data.  
@@ -161,82 +346,7 @@ http://codepen.io/tripott/pen/PWGvPj
 }, ...
 ]
 ```
-## DEMO: Curly brace notation
 
-- Create an object using curly brace notation.  
-- Note the `events` property.  We can place an array inside the object.
-- Reading a property that doesn’t exist produces an `undefined` value.
-- Inside the curly braces, include properties separated by commas.
-- To create  property provide a name, a colon, and the value.
-
-```
-var weatherObservation = {
-  dateTime: "2017-01-26T16:00:01Z",
-  humidityPct: 80,
-  forecast: "Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.",
-  events: ["Fog", "Sun", "Partly Cloudy", "Thunderstorms", "Strong Wind Gusts"],
-  "did it rain": true
-}
-
-console.log(weatherObservation.humidityPct)   // => 80
-console.log(weatherObservation.temp)          // => undefined
-console.log(weatherObservation.events.length) // => 5
-console.log(JSON.stringify(weatherObservation))  // =>
-
- {"dateTime":"2017-01-26T16:00:01Z","humidityPct":80,"forecast":"Fog early with sunny skies by mid morning.  Partly cloudy in the afternoon with an 80 percent chance of thunderstorms in the afternoon. Wind gusts up to 30 mph.","events":["Fog","Sun","Partly Cloudy","Thunderstorms","Strong Wind Gusts"]}
-```
-- Properties whose names are not valid variable names or valid numbers have to be quoted.
-
-```
-var profile = {
-  firstName: "Steve",
-  lastName: "Martin",
-  "is wild and crazy": true
-}
-```
-- Assign a value to a property expression with the `=` operator. This will replace or create a new property on the object.
-
-```
-var profile = {
-  firstName: "Steve",
-  lastName: "Martin",
-  "is wild and crazy": true
-}
-
-profile.firstName = "Steven"
-profile.entertainerType = "Comedian"
-
-console.log(profile)  // => Object {firstName: "Steven", lastName: "Martin", is wild and crazy: true, entertainerType: "Comedian"}
-```
-
-- The `delete` operator is a unary operator that removes a property from an object.
-
-```
-var profile = {
-  firstName: "Steve",
-  lastName: "Martin",
-  "is wild and crazy": true
-}
-
-delete profile.lastName
-delete profile["is wild and crazy"]
-
-console.log(profile)  // => Object {firstName: "Steve"}
-```
-
-- The binary `in` operator returns a `Boolean` value that indicates whether that object has that property.
-
-```
-var profile = {
-  firstName: "Steve",
-  lastName: "Martin",
-  "is wild and crazy": true
-}
-
-delete profile.lastName
-console.log(profile.lastName)         // => undefined
-console.log("lastName" in profile);  // => false
-```
 
 ## DEMO: Ramda Mapping
 
