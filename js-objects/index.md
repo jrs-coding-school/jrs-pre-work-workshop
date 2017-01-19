@@ -347,17 +347,4 @@ http://codepen.io/tripott/pen/PWGvPj
 ```
 
 
-## DEMO: Ramda Mapping
-
-
-
-## DEMO: Ramda Filtering
-Ramda's `filter` function takes a _predicate_ and a "filterable" thing like an object or array.
-
-A predicate is a function that takes one item as input and returns either true or false based on whether the item satisfies some condition.
-
-## Find an object in an array
-
-## Find item in array using a value deep in another object.
-
 [Home](/)  

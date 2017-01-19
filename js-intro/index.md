@@ -1,4 +1,4 @@
-[Home](/)   [Arrays](/js-array)   [Objects](/js-objects)
+[Home](/)  |  [Arrays](/js-array)  |  [Objects](/js-objects)  |  [Functions](/js-functions) |  [ES6](/js-ES6)
 
 # JavaScript
 
