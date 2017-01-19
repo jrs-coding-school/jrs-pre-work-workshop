@@ -131,7 +131,7 @@ console.log(myObj)  // => Object {
 
   ```
   //////////////////
-  // Sample 1 - squaring a number
+  // Sample 1 - squaring a number.
   //////////////////
 
   // Before...
@@ -139,7 +139,7 @@ console.log(myObj)  // => Object {
     return x * x
   }
 
-  // After...
+  // After... no parens for a single parameter
   let square = x => x * x
 
   //////////////////
@@ -151,28 +151,35 @@ console.log(myObj)  // => Object {
     return a + b;
   }
 
-  // After...
+  // After...parens for multiple parameters
   let add = (a, b) => a + b
   ```
 
-- If using an expression after an arrow, the return is implicit, so no `return` is required. `return` is implied if using an expression after an arrow.
+- If using an expression after an arrow, the return is implicit, so no `return` is required.
+
+  CodePen: http://codepen.io/tripott/pen/egvmay
 
   ```
-  //////////////////
-  // Sample 1 - squaring a number
-  //////////////////
+  const peopleList = [
+  {firstName: "Judy", lastName: "Jones"},
+  {firstName: "Jimmy", lastName: "Johns"},
+  {firstName: "Jesse", lastName: "James"}
+  ]
 
-  // Before...
+  const fullName = peopleList.map(function(person){
+    return person.firstName + ' ' + person.lastName
+  })
 
+  console.log(fullName)
 
-  // After...
+  const fullNameArrow = peopleList.map(person => person.firstName + ' ' + person.lastName)
 
-
+  console.log(fullNameArrow)
   ```
 
 ### Arrow functions are always anonymous
 
-- The following examples anonymous functions are created:
+- In the following examples, anonymous functions are created:
 
   ```
   var f = function(x) {
@@ -192,15 +199,109 @@ console.log(myObj)  // => Object {
 
   CodePen: http://codepen.io/tripott/pen/vggPPj
 
+### Arrow Function Reference
+
+**parameters**
+
+  - () => { ... }     // no parameter
+  - x => { ... }      // one parameter, an identifier
+  - (x, y) => { ... } // several parameters
+
+**body**
+
+  - x => { return x * x }  // block
+  - x => x * x             // expression, equivalent to previous line
+  - x => ({name: x})       // implicit return with an object literal
 
 
 ### EXERCISE:  Convert to arrow functions
 
-Convert the functions in the following CodePen:  XXXXXXXX, to arrow functions.
+- Fork the CodePen: http://codepen.io/tripott/pen/YNZXwm
+- Convert each function to an arrow function.
+- In the third exercise, convert the `for` loop, too.
 
 
+## Destructuring
 
+The destructuring assignment syntax is a JavaScript expression that makes it possible to extract data from arrays or objects into distinct variables.
 
+On the left-hand side of the assignment to define what elements to extract from the sourced variable.
 
+With ES6 destructuring, you can grab one or several properties from an object using an object pattern.
 
-## destructuring
+CodePen: http://codepen.io/tripott/pen/EZWPVm
+
+```
+const automobile = {model: "Tesla", cost: 50000, isFunToDrive: true}
+const {isFunToDrive} = automobile
+console.log(`Is this car fun to drive? ${isFunToDrive}`)
+```
+
+You can destructure multiple properties from an object literal.
+
+```
+const {shoeName, price} = {brand: "Nike", shoeName: "swoosh", price: 89.99, inStock:false}
+```
+
+You can destructure a function from a library. Here we are destructuring the `filter` function from RamdaJS.
+
+```
+const autos = [
+  {mfg: "Ford", model: "Mustang", price: 30000, isHybrid: false},
+  {mfg: "Checy", model: "Camaro", price: 35000, isHybrid: false},
+  {mfg: "Honda", model: "CR-Z", price: 38000, isHybrid: true}
+]
+const {filter} = R
+console.log(filter(auto => auto.isHybrid === true, autos))
+```
+
+[MDN: JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+### Destructuring Arrays
+
+CodePen: http://codepen.io/tripott/pen/BpWKVR
+
+The left-hand side of the assignment to define what elements to extract.
+
+```
+const stuff = [1,2,3,4,5,6,7,8]
+const [first, second] = stuff
+
+console.log("First", first)   // returns 1
+console.log("Second", second) // returns 2
+```
+
+A variable can be assigned its value via destructuring separate from the variable's declaration.
+
+```
+var a, b, c
+[a, b, c] =  ["dog","mouse","cat","hat","rat"]
+
+console.log(a)
+console.log(b)
+```
+
+You can ignore values.
+
+```
+var w, x, y, z
+[w, x, , y] =  ["green","eggs","and","ham","sam" ]
+
+console.log(w)        // returns "green"
+console.log(x)        // returns "eggs"
+console.log(y)        // returns "ham"
+```
+
+### `...` rest pattern
+
+When destructuring an array, you can assign the remaining part of it to a variable using the rest pattern.
+
+```
+var thing1, thing2, remainingThings
+
+[thing1, thing2, ...remainingThings] = ["THING 1", "THING 2", "Lorax", "Red Fish", "Blue Fish"]
+
+console.log(thing1)            //returns "THING 1"
+console.log(thing2)            //returns "THING 2"
+console.log(remainingThings)   //returns ["Lorax", "Red Fish", "Blue Fish"]
+```

@@ -309,8 +309,6 @@ CodePen: http://codepen.io/tripott/pen/gggVpZ
 - Use Ramda's `reject` function to return weatherObservations with no precipitation.
 
 
-
-
 ## Higher order functions - Using Ramda `map`
 
 After a while, writing a for loop becomes background noise.  Wouldn't you rather focus on solving the problem than writing a loop for the 100th time?
@@ -428,7 +426,7 @@ http://ramdajs.com/docs/#map
   - knots (0.8689762 *  Wind mph)
   - meters per second (0.44704 * Wind mph)
   - kilometers per hour (1.609344 * Wind mph)
-- Return a functor (array) containing objects.  Each object in the array should have the following shape:
+- Return an array containing objects.  Each object in the array should have the following shape:
 
   ```
   {
