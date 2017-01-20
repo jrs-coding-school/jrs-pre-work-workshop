@@ -1,4 +1,6 @@
-# ES6 Features
+[Home](/)  |  [JS Intro](/js-intro)  |  [Arrays](/js-array)  |  [Objects](/js-objects)  |  [Functions](/js-functions) |  [ES6](/js-ES6)
+
+# JavaScript ES6 Features
 
 ## What is ES6?  
 
@@ -25,7 +27,7 @@ Babel even has a cool [try it out](http://babeljs.io/repl/#?babili=false&evaluat
 
 
 
-## Constants
+## `const`
 
 Support for constants (also known as "immutable variables"), i.e., variables which cannot be re-assigned new content.
 
@@ -69,7 +71,7 @@ console.log(myObj)  // => Object {
   y = 20; // SyntaxError: Assignment to constant variable
   ```
 
-## let
+## `let`
 
 - The `let` statement declares a block scope local variable, optionally initializing it to a value.  `let` allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used. This is unlike the `var` keyword, which defines a variable globally, or locally to an entire function regardless of block scope.
 
@@ -95,9 +97,9 @@ console.log(myObj)  // => Object {
   }
   ```
 
-- Variables declared with a let statement are created as bindings on the lexical environment. A change to the specification of block statements in ES6 means that each block has its own lexical environment. In the above example, a new lexical environment is created when the block (the body of the if statement) is evaluated.
+- Variables declared with a `let` statement are created as bindings on the lexical environment. A change to the specification of block statements in ES6 means that each block has its own lexical environment. In the above example, a new lexical environment is created when the block (the body of the if statement) is evaluated.
 
-- Attempting to reference an identifier created as part of a let declaration before the declaration itself has been evaluated will result in an error:
+- Attempting to reference an identifier created as part of a `let` declaration before the declaration itself has been evaluated will result in an error:
 
   ```
   console.log(x); // ReferenceError: x is not defined
@@ -115,7 +117,7 @@ console.log(myObj)  // => Object {
   Credit:  http://dev.venntro.com/2013/09/es6-part-2/
 
 
-## Arrow functions
+## Arrow functions `=>`
 
 - An [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) expression has a shorter syntax than a function expression.
 
@@ -177,28 +179,6 @@ console.log(myObj)  // => Object {
   console.log(fullNameArrow)
   ```
 
-### Arrow functions are always anonymous
-
-- In the following examples, anonymous functions are created:
-
-  ```
-  var f = function(x) {
-   return x + 2
-  }
-
-  var myObject = {
-    firstName: "William",
-    lastName: "Defoe",
-    fullName: function() {
-      return this.firstName + " " + this.lastName
-    }
-  };
-
-  myObject.fullName()  // returns "William Defoe"
-  ```
-
-  CodePen: http://codepen.io/tripott/pen/vggPPj
-
 ### Arrow Function Reference
 
 **parameters**
@@ -229,6 +209,8 @@ On the left-hand side of the assignment to define what elements to extract from 
 
 With ES6 destructuring, you can grab one or several properties from an object using an object pattern.
 
+> See the MDN JavaScript docs for more tips on [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):  
+
 CodePen: http://codepen.io/tripott/pen/EZWPVm
 
 ```
@@ -257,11 +239,18 @@ console.log(filter(auto => auto.isHybrid === true, autos))
 
 [MDN: JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
+#### EXERCISE
+
+- Fork the CodePen: http://codepen.io/tripott/pen/EZWPVm
+- Duplicate the examples, using your own constants and array data.
+
 ### Destructuring Arrays
 
-CodePen: http://codepen.io/tripott/pen/BpWKVR
+Use the left-hand side of the assignment (left side of the `=`) to define what elements to extract.
 
-The left-hand side of the assignment to define what elements to extract.
+In this example the left-hand side of the assignment (`[first, second]`) is the “pattern” (in this case it’s called an “array pattern”, due to the resemblance to an array literal), and the `stuff` constant contains an array literal containing the array's values.  The pattern matches identifiers to array indicies in the right hand side. - Credit:  http://dev.venntro.com/2013/10/es6-part-3/
+
+CodePen: http://codepen.io/tripott/pen/BpWKVR
 
 ```
 const stuff = [1,2,3,4,5,6,7,8]
@@ -277,24 +266,30 @@ A variable can be assigned its value via destructuring separate from the variabl
 var a, b, c
 [a, b, c] =  ["dog","mouse","cat","hat","rat"]
 
-console.log(a)
-console.log(b)
+console.log(a)    // "dog"
+console.log(b)    // "mouse"
 ```
 
-You can ignore values.
+### Ignoring values
+
+In the array pattern (left hand side of the expression), you can ignore values, by supplying an extra comma to indicate which items you wish to skip.  In the example below, we are skipping over the third element in the array, the word "and".
+
+CodePen (Example 3): http://codepen.io/tripott/pen/BpWKVR
 
 ```
 var w, x, y, z
-[w, x, , y] =  ["green","eggs","and","ham","sam" ]
+[w, x, , y] =  ["green","eggs","and","ham","sam"]
 
 console.log(w)        // returns "green"
 console.log(x)        // returns "eggs"
 console.log(y)        // returns "ham"
 ```
 
-### `...` rest pattern
+### Assigning the rest of an array to a variable using the `...` rest pattern
 
-When destructuring an array, you can assign the remaining part of it to a variable using the rest pattern.
+When destructuring an array, you can assign the remaining part of it to a variable using the rest pattern.  In the example below, the `...remainingThings` rest element will receive the remaining items of the array, after "THING 2".  
+
+CodePen (Example 4): http://codepen.io/tripott/pen/BpWKVR
 
 ```
 var thing1, thing2, remainingThings
@@ -305,3 +300,10 @@ console.log(thing1)            //returns "THING 1"
 console.log(thing2)            //returns "THING 2"
 console.log(remainingThings)   //returns ["Lorax", "Red Fish", "Blue Fish"]
 ```
+
+> Note that a SyntaxError will be thrown if a trailing comma is used on the left-hand side with a rest element.
+
+#### EXERCISE
+
+- Fork the CodePen:  http://codepen.io/tripott/pen/BpWKVR
+- Duplicate each example, using your own constant names and array data.

@@ -1,4 +1,6 @@
-# Arrays
+[Home](/)  |  [JS Intro](/js-intro)  |  [Arrays](/js-array)  |  [Objects](/js-objects)  |  [Functions](/js-functions) |  [ES6](/js-ES6)
+
+# JavaScript Arrays
 
 > JavaScript provides a data type specifically for storing sequences of values.  It is called an _array_ and is written as a list of values between square brackets, separated by commas.
 

@@ -1,6 +1,6 @@
-[Home](/)  
+[Home](/)  |  [JS Intro](/js-intro)  |  [Arrays](/js-array)  |  [Objects](/js-objects)  |  [Functions](/js-functions) |  [ES6](/js-ES6)
 
-# Objects
+# JavaScript Objects
 
 - You can create an object using curly brace notation.  
 - Inside the curly braces, include properties separated by commas.

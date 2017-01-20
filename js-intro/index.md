@@ -1,6 +1,6 @@
-[Home](/)  |  [Arrays](/js-array)  |  [Objects](/js-objects)  |  [Functions](/js-functions) |  [ES6](/js-ES6)
+[Home](/)  |  [JS Intro](/js-intro)  |  [Arrays](/js-array)  |  [Objects](/js-objects)  |  [Functions](/js-functions) |  [ES6](/js-ES6)
 
-# JavaScript
+# Introduction to JavaScript
 
 > Software is eating industries. JavaScript is eating software.
 
@@ -19,6 +19,8 @@ In this session we will explore some JavaScript fundamentals including:
 - **Control Flow** - Control different routes for the code to flow based on a Boolean (true/false) value.
 - **Arrays** - JavaScript provides a data type specifically for storing sequences of values.
 
+>  [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+
 ## Values
 
 Every value has a type that determines its role. There are six basic types of values in JavaScript:
@@ -30,16 +32,122 @@ Every value has a type that determines its role. There are six basic types of va
 - functions
 - undefined values
 
+### numbers
+
+The `Number` JavaScript object allows you to work with numerical values.
+
+> [MDN JavaScript Reference- Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+
+#### Type Conversion
+
+`Number` can be used to perform a type conversion.  You can convert strings to numbers.
+
+```
+Number("123")     // 123
+Number("12.3")    // 12.3
+Number("")        // 0
+```
+
+If the argument cannot be converted into a number, it returns `NaN`.
+
+```
+Number("foo")     // NaN
+```
+
+#### `Number.isNaN()`
+
+Use `Number.isNaN()` to determine whether the passed value is `NaN`.  If the given value is NaN, `true` will be be returned.
+
+CodePen: http://codepen.io/tripott/pen/LxWgGM
+
+```
+// Is the value passed equal to NaN?
+console.log(Number.isNaN(15))       // false
+console.log(Number.isNaN("Doggy"))  // false
+var result = "Eight"
+console.log(Number.isNaN(result))   // false
+console.log(Number.isNaN(NaN))      // true
+```
+
 ### strings
 
-A `String` object comes with built-in properties.  
+A `String` object represents strings and support for manipulating them. A `String` object comes with built-in properties.  
 
-- Every string has a `toUpperCase` property.
+> [MDN JavaScript Reference- Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+#### `toUpperCase`
+
+- Every string has a `toUpperCase` property, which is a method/function.
 - Properties that contain functions are generally called methods of the value they belong to. As in, “toUpperCase is a method of a string”.
 
 ```
 var myString = "Cat"
 myString.toUpperCase()  //returns CAT
+```
+
+##### EXERCISE:  `toLowerCase()`
+
+- Create a CodePen to transform a string to lower case.  Output the transformed string to the console using console.log().
+
+#### `length`
+
+- A String has a `length` property which reflects the length of the string.
+
+```
+var myString = "Cat"
+myString.length      //returns 3
+```
+
+#### `split()`
+
+- The `split()` method splits a String object into an array of strings by separating the string into substrings.
+
+CodePen: http://codepen.io/tripott/pen/wgJEBN
+
+```
+var braveNewWorldQuote = "There's always soma to calm your anger, to reconcile you to your enemies, to make you patient and long-suffering. In the past you could only accomplish these things by making a great effort and after years of hard moral training. Now, you swallow two or three half-gramme tablets, and there you are. Anybody can be virtuous now. You can carry at least half your morality about in a bottle."
+
+var quoteArray = braveNewWorldQuote.split(" ")
+
+console.log(quoteArray)
+/*
+["There's", "always", "soma", "to", "calm", "your", "anger,", "to", "reconcile", "you", "to", "your", "enemies,", "to", "make", "you", "patient", "and", "long-suffering.", "In", "the", "past", "you", "could", "only", "accomplish", "these", "things", "by", "making", "a", "great", "effort", "and", "after", "years", "of", "hard", "moral", "training.", "Now,", "you", "swallow", "two", "or", "three", "half-gramme", "tablets,", "and", "there", "you", "are.", "Anybody", "can", "be", "virtuous", "now.", "You", "can", "carry", "at", "least", "half", "your", "morality", "about", "in", "a", "bottle."]
+*/
+
+console.log(quoteArray[2])   // "soma"
+
+const months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
+
+const monthsArray = months.split(",")
+console.log(monthsArray)      
+/*
+["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+*/
+console.log(monthsArray[4])   // "May
+```
+
+##### EXERCISE: `split()`
+
+- Fork the CodePen: http://codepen.io/tripott/pen/wgJEBN
+- Split the `braveNewWorldQuote` using the `and` separator.
+- Display the results to the console using console.log.
+
+#### `substring()`
+
+The `substring()` method returns a subset of a string between one index and another, or through the end of the string.  The method takes a start and optional end index.
+
+CodePen: http://codepen.io/tripott/pen/bgqxjG
+
+```
+// The `substring()` method returns a subset of a string between one index and another, or through the end of the string.  The method takes a start and optional end index.
+
+var title = "A Brave New World"
+
+console.log(title.substring(2))      // "Brave New World"
+console.log(title.substring(8))      // "New World"
+console.log(title.substring(8,11))   // "New"
+console.log(title.substring(2,7))    // "Brave"
+console.log(title.substring(7,2))    // "Brave"
 ```
 
 ## Operators
@@ -53,21 +161,20 @@ Combine and transform values with operators:
 - Unary (- to negate a number, ! to negate logically, and typeof to find a value’s type)
 - Ternary (?:) to pick one of two values based on a third value.
 
-### DEMO Adding
+### DEMO Add Operator
 
+- CodePen: http://codepen.io/tripott/pen/RKaqPv
 - Create a function named `add()`.  The function should accept two parameters named `add1` and `add2`.  The function should add the numbers and display the result using `alert()`.
-
 - Test the function in the console window.
-
 - Use an `onClick()` event handler to call the `add()` function from the pulse button.
 
-## Events
+### Events
 
 The Web platform provides several ways to get notified of events on a web page.  The platform provides a set of specific _on-event_ handlers.  The on-event handlers are a group of properties offered by HTML elements , such as links, buttons, images, forms, etc. to help manage how that element reacts to events like being clicked, detecting pressed keys, getting focus, etc.
 
 For example, in the previous demo, we specified an **onClick** event handler for the `<a>` element.
 
-### DEMO Multiply
+### DEMO Multiply Operator
 
 Create a function named `mult()` .  The function should accept two parameters, multiply and display the result.
 
@@ -79,7 +186,41 @@ Create a function named `mult()` .  The function should accept two parameters, m
 - Students fork the pen  http://codepen.io/tripott/pen/RKaqPv.  
 - Copy the `add()` and `mult()` functions by copying instructors code from screen.
 - Create corresponding "pulse" buttons to call your `add()` and `mult()` functions.
-- Create `minus()` and `divide()` functions and corresponding "pulse" buttons.  
+- Create `minus()` and `divide()` functions and corresponding "pulse" buttons.
+
+### Comparison Operators
+
+#### Equality
+
+JavaScript has both strict and type–converting comparisons. A strict comparison (e.g., ===) is only true if the operands are of the same type and the contents match. The more commonly-used abstract comparison (e.g. ==) converts the operands to the same type before making the comparison.  - [MDN Comparison Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
+
+> You can get into trouble with `==`.  It's safer to use `===` to perform a strict comparison which compares the type and content.  
+
+#### Equality (==) versus strict equality (===)
+
+CodePen: http://codepen.io/tripott/pen/XpMxvG
+
+If the operands are of different types, `==` and `!=` will attempt to convert them to the same type before making the comparison.  When comparing a number and a string, the string is converted to a number value.   If one of the operands is Boolean, the Boolean operand is converted to 1 if it is true and +0 if it is false.
+
+```
+console.log("Ex.1 Equality", 1 == 1)              // "Ex.1 Equality" true
+console.log("Ex.2 Equality", 1 == '1')            // "Ex.2 Equality" true
+console.log("Ex.3 Equality", 1 == true)           // "Ex.3 Equality" true
+console.log("Ex.4 Equality", 0 == false)          // "Ex.4 Equality" true
+```
+
+The strict equality operators (=== and !==) are intended for performing equality comparisons on operands of the same type. If the operands are of different types, the result is always false so 5 !== '5'.
+
+```
+console.log("Ex.5 Strict Equality", 1 === 1)      // "Ex.5 Strict Equality" true
+console.log("Ex.6 Strict Equality", 1 === '1')    // "Ex.6 Strict Equality" false
+console.log("Ex.7 Equality", 1 === true)          // "Ex.7 Equality" false
+console.log("Ex.8 Equality", 0 === false)         // "Ex.8 Equality" false
+console.log("Ex.9 Equality", true === true)       // "Ex.9 Equality" true
+```
+
+
+
 
 ## Program Structure
 

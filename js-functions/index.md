@@ -1,4 +1,6 @@
-# Functions
+[Home](/)  |  [JS Intro](/js-intro)  |  [Arrays](/js-array)  |  [Objects](/js-objects)  |  [Functions](/js-functions) |  [ES6](/js-ES6)
+
+# JavaScript Functions
 
 ## Ways to define a function
 
