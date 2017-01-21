@@ -55,33 +55,32 @@ Arrays can contain objects. What is an object?
 
 - A value within an object can be an array which contains objects.
 
-CodePen YouTube JSON Data Example:  http://codepen.io/tripott/pen/dNOZpV
-
+  CodePen:  http://codepen.io/tripott/pen/dNOZpV
 
 - The notation for getting at the elements inside an array also uses square brackets. This will look up the element that corresponds to the index given by the expression in the brackets.
 - The first index of an array is zero, not one. So the first element can be read with listOfNumbers[0].  This is called "zero-based counting".
 
-```
-var listOfNumbers = [2, 3, 5, 7, 11];
-console.log(listOfNumbers[0]);     // returns 2
-console.log(listOfNumbers[1]);     // returns 3
-console.log(listOfNumbers[1 - 1])  // returns 2
-console.log(listOfNumbers[3])      // returns 7
-console.log(listOfNumbers[5])      // returns undefined
-```
+  ```
+  var listOfNumbers = [2, 3, 5, 7, 11];
+  console.log(listOfNumbers[0]);     // returns 2
+  console.log(listOfNumbers[1]);     // returns 3
+  console.log(listOfNumbers[1 - 1])  // returns 2
+  console.log(listOfNumbers[3])      // returns 7
+  console.log(listOfNumbers[5])      // returns undefined
+  ```
 
 ### Array Properties and Methods
 
 - Almost all JavaScript values have properties.
 - To get the length of a string we could use the `.length` property of a `string` or `array`:
 
-```
-var myString = "Cat"
-myString.length             // returns 3
+  ```
+  var myString = "Cat"
+  myString.length             // returns 3
 
-var listOfNumbers = [2, 3, 5, 7, 11]
-listOfNumbers.length        // returns 5
-```
+  var listOfNumbers = [2, 3, 5, 7, 11]
+  listOfNumbers.length        // returns 5
+  ```
 
 ### Accessing properties in JavaScript
 
@@ -98,29 +97,29 @@ two most common ways to access properties in JavaScript:
 
 Here are some examples of dot notation when accessing a property:
 
-When using a dot, the part after the dot _must be a valid variable name_, and it directly names the property.
+- When using a dot, the part after the dot _must be a valid variable name_, and it directly names the property.
 
-In the example below `myString.length`  fetches the property of value named `length`.
+- In the example below `myString.length`  fetches the property of value named `length`.
 
-```
-var myString = "Cat"
-myString.length
-// returns 3.  
-//"length" property is a valid variable name, since length exists for all string objects.
-```
+  ```
+  var myString = "Cat"
+  myString.length
+  // returns 3.  
+  //"length" property is a valid variable name, since length exists for all string objects.
+  ```
 
 ### square brackets
 
-When using square brackets, the expression between the brackets is _evaluated_ to get the property name.
+- When using square brackets, the expression between the brackets is _evaluated_ to get the property name.
 
-value[x] tries to evaluate the expression x and uses the result as the property name.
+- value[x] tries to evaluate the expression x and uses the result as the property name.
 
-```
-var propertyName = "length"
-var lastName = "Ottinger"
-lastName.length         // -> returns a value of 8
-lastName[propertyName]  // -> returns a value of 8
-```
+  ```
+  var propertyName = "length"
+  var lastName = "Ottinger"
+  lastName.length         // -> returns a value of 8
+  lastName[propertyName]  // -> returns a value of 8
+  ```
 
 ### Array Methods `push`, `pop`, `join`
 
@@ -147,24 +146,24 @@ theSentence.join(" ")
 
 - The method for _adding_ to the start of an array is `unshift`.
 
-```
-// Here's an empty array named "theSentence"
-var theSentence = []
-theSentence.push("the", "dish", "ran", "away", "with", "the", "spoon.")
-theSentence.unshift("The", "cow", "jumped", "over", "the", "moon", "and")
-theSentence.join(" ")  // => "The cow jumped over the moon and the dish ran away with the spoon."
-```
+  ```
+  // Here's an empty array named "theSentence"
+  var theSentence = []
+  theSentence.push("the", "dish", "ran", "away", "with", "the", "spoon.")
+  theSentence.unshift("The", "cow", "jumped", "over", "the", "moon", "and")
+  theSentence.join(" ")  // => "The cow jumped over the moon and the dish ran away with the spoon."
+  ```
 
 - The method for _removing_ from the start of an array is `shift`
 
-```
-theSentence.shift()  // => "The"
-theSentence.shift()  // => "cow"
-theSentence.shift()  // => "jumped"
-theSentence.join(" ") // => "over the moon and the dish ran away with the spoon."
-```
+  ```
+  theSentence.shift()  // => "The"
+  theSentence.shift()  // => "cow"
+  theSentence.shift()  // => "jumped"
+  theSentence.join(" ") // => "over the moon and the dish ran away with the spoon."
+  ```
 
-## Higher ordered functions - Using an array's built in `filter()` method
+## Higher ordered functions - `filter()`
 
 ![Filter the dogs](/assets/img/filter-dogs.png)
 
@@ -196,7 +195,8 @@ console.log(dogs)
 */
 ```
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+> [MDN Array Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+
 
 - The `filter()` method creates a new array with all elements that pass the test implemented by the provided function.  The original array is not mutated.
 
@@ -204,8 +204,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 - The callback function you provide should be a _predicate_ function to test each element of the array. Return `true` to keep the element.
 
-- The data (array) is called a _functor_.  The `filter` method loops over the data (functor) and applies the supplied callback function/predicate function for each item in functor.
-
+- The data (array) is called a _functor_.  The `filter` method loops over the data (functor) and applies the supplied callback function/predicate function for each item in functor.  
 
 
   ```
@@ -243,12 +242,9 @@ Let's watch the following video as a group.  It helps to explain:
 
 ### EXERCISE: Filtering Arrays
 
-- Fork the CodePen below.
+- Fork the CodePen:  http://codepen.io/tripott/pen/XppLwj
 - Use JavaScript's built in `filter()` method to filter the array of weather observations.  Only observations that have a wind gusts over 60 should be returned.
-
-  Fork this CodePen:  http://codepen.io/tripott/pen/XppLwj
-
-  Use this CodePen if you need an example to guide you along: http://codepen.io/tripott/pen/bggPrm
+- Use this CodePen if you need an example to guide you along: http://codepen.io/tripott/pen/bggPrm
 
 ## DEMO: Higher order functions - Using Ramda's `filter`
 
@@ -305,17 +301,19 @@ CodePen: http://codepen.io/tripott/pen/gggVpZ
 
 - Once the RamdaJS code library has been added it will be accessible via the `R` object:
 
-  `R.filter`
+  Example: `R.filter`
 
 - Use Ramda's `filter` function to return weatherObservations with precipitation.
 - Use Ramda's `reject` function to return weatherObservations with no precipitation.
 
 
-## Higher order functions - Using Ramda `map`
+## Higher ordered functions - `map()`
 
-After a while, writing a for loop becomes background noise.  Wouldn't you rather focus on solving the problem than writing a loop for the 100th time?
+![map](/assets/img/map.png)
 
-Ramda has a `map` function that takes two things.  A function and data.  The data is called a _functor_.  The map function loops over the data (functor) and applies (maps) the supplied function for each item in functor.
+The `map()` method creates a new array with the results of calling a provided function on every element in this array.
+
+JavaScript arrays have a built-in `map` function.  Ramda has a `map` function that takes two things.  A function and data.  The data is called a _functor_.  The map function loops over the data (functor) and applies (maps) the supplied function for each item in functor.
 
 CodePen: http://codepen.io/tripott/pen/pRezra
 
@@ -442,5 +440,86 @@ http://ramdajs.com/docs/#map
   }
   ```
 
+## Higher ordered functions - `find()`
+
+![map](/assets/img/find.png)
+
+The `find()` method returns a value of the first element in the array that satisfies the provided testing (predicate) function.
+
+http://ramdajs.com/docs/#find
+
+CodePen: http://codepen.io/tripott/pen/oBZRbJ
+
+```
+var orders = [
+  {order: 1123, table: 50, server: "Donna", desc: "Cuban Sandwich", type: "Sandwich", completed: true },
+  {order: 1124, table: 50, server: "Jeff",desc: "Club Sandwich", type: "Sandwich", completed: true },
+  {order: 1125, table: 50, server: "Steve",desc: "Cobb Salad", type: "Salad", completed: false },
+  {order: 1126, table: 50, server: "Donna",desc: "Cheeseburger", type: "Sandwich", completed: false },
+  {order: 1127, table: 50, server: "Alice",desc: "Buffalo Sliders", type: "Appetizer", completed: false },
+]
+
+function nextOrder(order) {
+  return order.completed === false
+}
+
+R.find(nextOrder,orders)
+
+/*
+Returns the first order where completed is equal to false
+{
+  completed: false,
+  desc: "Cobb Salad",
+  order: 1125,
+  server: "Steve",
+  table: 50,
+  type: "Salad"
+}
+*/
+```
+
+In the code sample above, notice the testing/predicate function named `nextOrder()` which accepts an order and checks the `completed` property to see if it is `false`.  
+
+Creating a predicate function to check property values is fairly common.  Fortunately, Ramda provides a `propEq()` function which returns `true` if the specified object contains the property and value.  `propEq()` returns a predicate function.  By itself it is not that useful.  But we know that predicate functions can be used in `filter()` and `find()`.
+
+The following two samples result in predicate functions that perform the same test:
+
+```
+function nextOrder(order) {
+  return order.completed === false
+}
+
+R.propEq("completed", false)
+```
+
+Which means the following two filters are equivalent and will return the same object from the array.
+
+```
+var orders = [
+  {order: 1123, table: 50, server: "Donna", desc: "Cuban Sandwich", type: "Sandwich", completed: true },
+  {order: 1124, table: 50, server: "Jeff",desc: "Club Sandwich", type: "Sandwich", completed: true },
+  {order: 1125, table: 50, server: "Steve",desc: "Cobb Salad", type: "Salad", completed: false },
+  {order: 1126, table: 50, server: "Donna",desc: "Cheeseburger", type: "Sandwich", completed: false },
+  {order: 1127, table: 50, server: "Alice",desc: "Buffalo Sliders", type: "Appetizer", completed: false },
+]
+
+function nextOrder(order) {
+  return order.completed === false
+}
+
+R.find(nextOrder, orders)
+R.find(R.propEq("completed", false), orders)
+
+/* Both will find the same object from the array:
+{
+    completed: false,
+    desc: "Cobb Salad",
+    order: 1125,
+    server: "Steve",
+    table: 50,
+    type: "Salad"
+}
+*/
+```
 
 [Home](/)

@@ -190,7 +190,23 @@ Create a function named `mult()` .  The function should accept two parameters, m
 
 ### Comparison Operators
 
-#### Equality
+Logical operators are typically used with Boolean (logical) (true/false) values.  
+
+> > [MDN JavaScript Reference- Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+
+#### Logical AND (`&&`)
+
+When used with Boolean values, && returns true if both operands are true; otherwise, returns false.
+
+#### Logical OR (`||`)
+
+When used with Boolean values, || returns true if either operand is true.
+
+#### Short-circuit evaluation
+
+
+
+### Equality
 
 JavaScript has both strict and type–converting comparisons. A strict comparison (e.g., ===) is only true if the operands are of the same type and the contents match. The more commonly-used abstract comparison (e.g. ==) converts the operands to the same type before making the comparison.  - [MDN Comparison Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 
@@ -218,6 +234,8 @@ console.log("Ex.7 Equality", 1 === true)          // "Ex.7 Equality" false
 console.log("Ex.8 Equality", 0 === false)         // "Ex.8 Equality" false
 console.log("Ex.9 Equality", true === true)       // "Ex.9 Equality" true
 ```
+
+### Logic operators
 
 
 
