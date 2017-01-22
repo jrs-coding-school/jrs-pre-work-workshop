@@ -64,7 +64,6 @@ CodePen: http://codepen.io/tripott/pen/LxWgGM
 // Is the value passed equal to NaN?
 console.log(Number.isNaN(15))       // false
 console.log(Number.isNaN("Doggy"))  // false
-var result = "Eight"
 console.log(Number.isNaN(result))   // false
 console.log(Number.isNaN(NaN))      // true
 ```
@@ -123,7 +122,7 @@ console.log(monthsArray)
 /*
 ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 */
-console.log(monthsArray[4])   // "May
+console.log(monthsArray[4])   // "May"
 ```
 
 ##### EXERCISE: `split()`
@@ -139,7 +138,8 @@ The `substring()` method returns a subset of a string between one index and anot
 CodePen: http://codepen.io/tripott/pen/bgqxjG
 
 ```
-// The `substring()` method returns a subset of a string between one index and another, or through the end of the string.  The method takes a start and optional end index.
+// The `substring()` method returns a subset of a string between one index and another,
+//  or through the end of the string.  The method takes a start and optional end index.
 
 var title = "A Brave New World"
 
