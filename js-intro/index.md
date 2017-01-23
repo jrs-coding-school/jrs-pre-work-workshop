@@ -437,7 +437,7 @@ For this demo, we will use functions that exist within the browser environment:
 - We will ask for a number with `prompt()`
 - Try and convert it to a number with `Number()`
 - Perform a check to ensure it's a number with `!isNaN`
-- `confirm()` that the user wishes to square the number (9 * 9 = 81 or 2 * 2 = 4).
+- `confirm()` that the user wishes to square the number (9 x 9 = 81 or 2 x 2 = 4).
 - `alert()` the user of the outcome.
 - Cover all alternate paths.  
   - Prompted value is not a number
