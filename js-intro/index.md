@@ -485,7 +485,7 @@ function evenNumbers() {
 }
 ```
 
-### DEMO - EVEN NUMBERS
+### DEMO - Compute the power of a number
 
 Create a function that computes the power of a number.  Prompt for a base and exponent.
 
