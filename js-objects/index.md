@@ -326,6 +326,8 @@ http://codepen.io/tripott/pen/PWGvPj
 
 ## EXERCISE: Mapping
 
+CodePen: http://codepen.io/tripott/pen/dNOyoV
+
 - Loop over the array of `weatherObservations` data
 - Transform each object into a new object and return a new array.
 - Each new object in the returned array should have the following structure:
