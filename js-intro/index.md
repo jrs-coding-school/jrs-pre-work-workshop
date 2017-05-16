@@ -180,11 +180,9 @@ Create a function named `mult()` .  The function should accept two parameters, m
 
 ### Student Exercises
 
-> FORK THE PEN:  http://codepen.io/tripott/pen/RKaqPv.
-
 - Instructor "slacks" the url to the **JRS Pre-workshop: JS demos** pen
-- Students fork the pen  http://codepen.io/tripott/pen/RKaqPv.  
-- Copy the `add()` and `mult()` functions by copying instructors code from screen.
+- Students fork the pen  http://codepen.io/tripott/pen/dNRpbN?editors=1111.  
+- Create the `add()` and `mult()` functions by copying instructors code from screen.
 - Create corresponding "pulse" buttons to call your `add()` and `mult()` functions.
 - Create `minus()` and `divide()` functions and corresponding "pulse" buttons.
 
