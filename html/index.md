@@ -6,7 +6,7 @@ HTML tells a web browser how to display a web page.
 
 CSS makes the web page look nice.
 
-## What your will build
+## What you will build
 
 HTML (Hypertext Markup Language) is the set of markup symbols or codes inserted in a file intended for display on a World Wide Web browser page. The markup tells the Web browser how to display a Web page's words and images for the user.
 

@@ -6,7 +6,7 @@ The goal of this session is to provide students with a baseline set of web platf
 
 ## PRIOR TO START OF LECTURE
 
-- Send your email address to `trip@jackrussellsoftware.com` and `tom@jackrussellsoftware.com`.
+- Send your email address to `dominick@harborec.com`.
 - Sign up for the free plan on codepen: https://codepen.io/signup
 - Sign up to Slack.  https://slack.com/
 - We will email you an invite you to the Slack `jrscode` channel.  
